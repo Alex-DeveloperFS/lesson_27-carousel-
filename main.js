@@ -92,8 +92,8 @@
   function swipeEndHandler(e) {
     endPosX = e instanceof MouseEvent ? e.pageX : e.changedTouches[0].pageX
 
-    if (startPosX - endPosX > 100) nextHandler()
-    if (startPosX - endPosX < 100) prevHandler()
+    if (endPosX - startPosX > 100) prevHandler()
+    if (endPosX - startPosX < -100) nextHandler()
   }
 
   function initListeners() {
