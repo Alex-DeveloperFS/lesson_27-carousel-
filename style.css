@@ -1,12 +1,11 @@
 body {
     margin: 0;
     box-sizing: border-box;
-    /*background-color: lightsalmon;*/
 }
 
 .slides {
     position: relative;
-    min-height: 80vh;
+    min-height: 100vh;
     min-width: 100vw;
     padding: 0;
     margin: 0;
@@ -33,7 +32,6 @@ body {
 .active {
     opacity: 1;
     z-index: 0;
-
 }
 
 .slide:nth-of-type(1) {
@@ -79,29 +77,62 @@ body {
 }
 
 .controls {
-    margin-top: 30px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 10px;
-    padding-right: 10px;
-    padding-left: 10px;
+
 }
 
 .control {
     cursor: pointer;
-    border: 3px solid black;
-    width: 100%;
-    transition: 0.5s;
-    display: grid;
+    font-size: 100px;
+    color: white;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    padding: 20px 0;
-    font-size: 50px;
-    border-radius: 10px;
-    background-color: cornsilk;
+    transition: 3s;
+    opacity: 20%;
 }
 
 .control:hover {
-    background: #ccc;
+    opacity: 100%;
+}
+
+.control-prev {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100px;
+    transition: 1s;
+    background-color: rgba(255,255,255,0.01);
+}
+
+.control-prev:hover {
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.5) 0%, #ffffff00 100%);
+
+}
+
+.control-pause {
+    position: absolute;
+    top: calc(50% - 50px);
+    right: calc(50% - 50px);
+    opacity: 10%;
+}
+
+.control-pause:hover {
+    opacity: 100%;
+}
+
+.control-next {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100px;
+    background-color: rgba(255,255,255,0.01);
+    transition: 1s;
+}
+
+.control-next:hover {
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.5) 0%, #ffffff00 100%);
 }
 
 .indicators {
@@ -109,18 +140,21 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    bottom: 5%;
+    right: calc(50% - 120px);
 }
 
 .indicator {
-    border: 1px solid black;
-    width: 30px;
-    height: 30px;
+    border: 5px solid white;
+    width: 20px;
+    height: 20px;
     margin-right: 5px;
     margin-left: 5px;
     transition: 0.5s;
-    border-radius: 5px;
+    border-radius: 100%;
 }
 
 .indicator.active {
-    background: #c90808;
+    box-shadow: white 0 0 13px 7px;
 }
