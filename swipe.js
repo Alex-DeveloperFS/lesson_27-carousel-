@@ -21,8 +21,8 @@ class SwipeCarousel extends Carousel {
   _swipeEndHandler(e) {
     this.endPosX = e instanceof MouseEvent ? e.pageX : e.changedTouches[0].pageX
 
-    if (this.endPosX - this.startPosX > 100) this.prevHandler()
-    if (this.endPosX - this.startPosX < -100) this.nextHandler()
+    if (this.endPosX - this.startPosX > 50) this.prevHandler()
+    if (this.endPosX - this.startPosX < -50) this.nextHandler()
   }
 }
 

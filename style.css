@@ -110,7 +110,7 @@ body {
 
 }
 
-.control-pause {
+.control-pause, .control-play {
     position: absolute;
     top: calc(50% - 50px);
     right: calc(50% - 50px);
